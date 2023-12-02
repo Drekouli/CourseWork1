@@ -35,10 +35,7 @@ namespace Factory
 
             adapter.SelectCommand = com;
             adapter.Fill(table);
-FormAdmin formAdmin = new FormAdmin();
-this.Hide();
-formAdmin.ShowDialog();
-            /*
+            
             try
             {
                 if ((table.Rows[0]["authorization_access"].ToString() == "Программист")
@@ -48,8 +45,9 @@ formAdmin.ShowDialog();
                     textBox_Login.Text = "";
                     textBox_Password.Text = "";
                     FormAdmin formAdmin = new FormAdmin();
+                    formAdmin.Closed += (s, args) => this.Close();
                     this.Hide();
-                    formAdmin.ShowDialog();
+                    formAdmin.Show();
                 }
 
                 else if (table.Rows[0]["authorization_access"].ToString() == "Бухгалтер")
@@ -57,8 +55,9 @@ formAdmin.ShowDialog();
                     textBox_Login.Text = "";
                     textBox_Password.Text = "";
                     FormStaff formStaff = new FormStaff(false);
+                    formStaff.Closed += (s, args) => this.Close();
                     this.Hide();
-                    formStaff.ShowDialog();
+                    formStaff.Show();
                 }
 
                 else if (table.Rows[0]["authorization_access"].ToString() == "Кладовщик")
@@ -66,9 +65,10 @@ formAdmin.ShowDialog();
                     textBox_Login.Text = "";
                     textBox_Password.Text = "";
                     FormMaterials formMaterials = new FormMaterials(false);
+                    formMaterials.Closed += (s, args) => this.Close();
                     this.Hide();
-                    formMaterials.ShowDialog();
-
+                    formMaterials.Show();
+                
                 }
 
                 else if (table.Rows[0]["authorization_access"].ToString() == "Мастер")
@@ -76,8 +76,9 @@ formAdmin.ShowDialog();
                     textBox_Login.Text = "";
                     textBox_Password.Text = "";
                     FormFurniture formFurniture = new FormFurniture();
+                    formFurniture.Closed += (s, args) => this.Close();
                     this.Hide();
-                    formFurniture.ShowDialog();
+                    formFurniture.Show();
                 }
             }
             catch
@@ -85,7 +86,7 @@ formAdmin.ShowDialog();
                 MessageBox.Show("Такого аккаунта не существует");
             }
             database.closeConnection();
-            */
+            
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

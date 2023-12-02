@@ -59,8 +59,9 @@ namespace Factory
         private void button_admin_Click(object sender, EventArgs e)
         {
             FormAdmin formAdmin = new FormAdmin();
+            formAdmin.Closed += (s, args) => this.Close();
             this.Hide();
-            formAdmin.ShowDialog();
+            formAdmin.Show();
         }
 
         private void FormRegistration_Load(object sender, EventArgs e)
@@ -140,11 +141,6 @@ namespace Factory
         {
             groupBox_data.Enabled = true;
             Delete();
-        }
-
-        private void Form_Closed(object sender, FormClosedEventArgs e)
-        {
-            System.Environment.Exit(0);
         }
 
         private void dgv_auth_CellContentClick(object sender, DataGridViewCellEventArgs e)

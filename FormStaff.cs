@@ -17,6 +17,7 @@ namespace Factory
         DataBase database = new DataBase();
 
         int selectedRow;
+        bool update = false;
 
         public FormStaff(bool admin)
         {
@@ -75,8 +76,9 @@ namespace Factory
         private void button_admin_Click(object sender, EventArgs e)
         {
             FormAdmin formAdmin = new FormAdmin();
+            formAdmin.Closed += (s, args) => this.Close();
             this.Hide();
-            formAdmin.ShowDialog();
+            formAdmin.Show();
         }
 
         private void FormStaff_Load(object sender, EventArgs e)
@@ -133,6 +135,27 @@ namespace Factory
             date_dismis.Text = "";
             groupBox_data.Enabled = true;
         }
+        private void Update()
+        {
+            int id = Convert.ToInt32(dgv_staff.Rows[selectedRow].Cells[0].Value);
+            string[] fio = textBox_fio.Text.Split(' ');
+            string addQuery = "";
+            if (checkBox_eye.Checked)
+            {
+                addQuery = $"UPDATE table_staff SET staff_lastname = '{fio[0]}', staff_firstname = '{fio[1]}', staff_middlename = '{fio[2]}', staff_post = '{textBox_post.Text}', " +
+                $"staff_salary = '{textBox_salary.Text}', staff_employed = '{date_employ.Value.ToString("yyyy-MM-dd")}', staff_dismissed = '{date_dismis.Value.ToString("yyyy-MM-dd")}' WHERE staff_id = {id}";
+            }
+            else
+            {
+                addQuery = $"UPDATE table_staff SET staff_lastname = '{fio[0]}', staff_firstname = '{fio[1]}', staff_middlename = '{fio[2]}', staff_post = '{textBox_post.Text}', " +
+                $"staff_salary = '{textBox_salary.Text}', staff_employed = '{date_employ.Value.ToString("yyyy-MM-dd")}' WHERE staff_id = {id}";
+            }
+
+            var command = new SqlCommand(addQuery, database.GetConnection());
+            database.openConnection();
+            command.ExecuteNonQuery();
+            database.closeConnection();
+        }
 
         private void Add()
         {
@@ -142,13 +165,22 @@ namespace Factory
             var salary = textBox_salary.Text;
             string employ = date_employ.Value.ToString("yyyy-MM-dd");
             string dismis = date_dismis.Value.ToString("yyyy-MM-dd");
-            var addQuery = $"INSERT INTO table_staff(staff_lastname, staff_firstname, staff_middlename, staff_post, staff_salary, staff_employed, staff_dismissed) VALUES" +
-                $"('{fio[0]}', '{fio[1]}', '{fio[2]}', '{post}', '{salary}', '{employ}', '{dismis}')";
-            if (checkBox_eye.Checked == false)
+            string addQuery = "";
+
+            if (checkBox_eye.Checked)
+            {
+                addQuery = $"INSERT INTO table_staff(staff_lastname, staff_firstname, staff_middlename, staff_post, staff_salary, staff_employed, staff_dismissed) VALUES" +
+                $"('{fio[0]}', '{fio[1]}', '{fio[2]}', '{textBox_post.Text}', '{textBox_salary.Text}', '{date_employ.Value.ToString("yyyy-MM-dd")}', '{date_dismis.Value.ToString("yyyy-MM-dd")}')";
+            }
+            else
             {
                 addQuery = $"INSERT INTO table_staff(staff_lastname, staff_firstname, staff_middlename, staff_post, staff_salary, staff_employed) VALUES" +
-                $"('{fio[0]}', '{fio[1]}', '{fio[2]}', '{post}', '{salary}', '{employ}')";
+                $"('{fio[0]}', '{fio[1]}', '{fio[2]}', '{textBox_post.Text}', '{textBox_salary.Text}', '{date_employ.Value.ToString("yyyy-MM-dd")}')";
             }
+            var command = new SqlCommand(addQuery, database.GetConnection());
+            database.openConnection();
+            command.ExecuteNonQuery();
+            /*
             try
             {
                 var command = new SqlCommand(addQuery, database.GetConnection());
@@ -159,12 +191,21 @@ namespace Factory
             {
                 MessageBox.Show("Вы пытаетесь добавить уже существующую запись.\nПожалуйста, измените запись.\nЕсли вы уверены, что добавляете новую запись - обратитесь к системному администратору за помощью", "Внимание!");
             }
+            */
             database.closeConnection();
         }
         private void button_save_Click(object sender, EventArgs e)
         {
-            Add();
+            if (update)
+            {
+                Update();
+            }
+            else
+            {
+                Add();
+            }
             RefreshDgv(dgv_staff);
+            update = false;
         }
 
         private void Search(DataGridView dgv)
@@ -210,16 +251,11 @@ namespace Factory
             Delete();
             RefreshDgv(dgv_staff);
         }
-       
-        private void Form_Closed(object sender, FormClosedEventArgs e)
-        {
-            System.Environment.Exit(0);
-        }
 
         private void button_edit_Click(object sender, EventArgs e)
         {
             groupBox_data.Enabled = true;
-            Delete();
+            update = true;
         }
 
         private void textBox_salary_KeyPress(object sender, KeyPressEventArgs e)

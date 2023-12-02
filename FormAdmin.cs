@@ -36,32 +36,25 @@ namespace Factory
         private void button_staff_Click(object sender, EventArgs e)
         {
             FormStaff formStaff = new FormStaff(true);
+            formStaff.Closed += (s, args) => this.Close();
             this.Hide();
-            formStaff.ShowDialog();
-        }
-
-        private void FormAdmin_Load(object sender, EventArgs e)
-        {
-            
+            formStaff.Show();
         }
 
         private void button_accounts_Click(object sender, EventArgs e)
         {
             FormRegistration formRegistration = new FormRegistration();
+            formRegistration.Closed += (s, args) => this.Close();
             this.Hide();
-            formRegistration.ShowDialog();
-        }
-
-        private void Form_Closed(object sender, FormClosedEventArgs e)
-        {
-            System.Environment.Exit(0);
+            formRegistration.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             FormMaterials formMaterials = new FormMaterials(true);
+            formMaterials.Closed += (s, args) => this.Close();
             this.Hide();
-            formMaterials.ShowDialog();
+            formMaterials.Show();
         }
     }
 }
