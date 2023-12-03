@@ -118,7 +118,7 @@ namespace Factory
             RefreshDgv(dgv_materials_order);
         }
 
-        private void dgv_staff_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_materials_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
 

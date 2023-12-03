@@ -36,10 +36,10 @@
             // 
             // button_accounts
             // 
-            this.button_accounts.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_accounts.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_accounts.Location = new System.Drawing.Point(12, 12);
             this.button_accounts.Name = "button_accounts";
-            this.button_accounts.Size = new System.Drawing.Size(131, 35);
+            this.button_accounts.Size = new System.Drawing.Size(381, 60);
             this.button_accounts.TabIndex = 5;
             this.button_accounts.Text = "Аккаунты";
             this.button_accounts.UseVisualStyleBackColor = true;
@@ -47,10 +47,10 @@
             // 
             // button_staff
             // 
-            this.button_staff.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_staff.Location = new System.Drawing.Point(12, 53);
+            this.button_staff.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_staff.Location = new System.Drawing.Point(12, 78);
             this.button_staff.Name = "button_staff";
-            this.button_staff.Size = new System.Drawing.Size(202, 35);
+            this.button_staff.Size = new System.Drawing.Size(381, 60);
             this.button_staff.TabIndex = 6;
             this.button_staff.Text = "Работа с кадрами";
             this.button_staff.UseVisualStyleBackColor = true;
@@ -58,20 +58,20 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(12, 94);
+            this.button2.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(12, 144);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 35);
+            this.button2.Size = new System.Drawing.Size(381, 60);
             this.button2.TabIndex = 7;
             this.button2.Text = "Мастер";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(12, 135);
+            this.button3.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(12, 210);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 35);
+            this.button3.Size = new System.Drawing.Size(381, 60);
             this.button3.TabIndex = 8;
             this.button3.Text = "Кладовщик";
             this.button3.UseVisualStyleBackColor = true;
@@ -81,13 +81,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 376);
+            this.ClientSize = new System.Drawing.Size(406, 282);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button_staff);
             this.Controls.Add(this.button_accounts);
             this.Name = "FormAdmin";
-            this.Text = "FormAdmin";
+            this.Text = "Администратор";
             this.ResumeLayout(false);
 
         }
