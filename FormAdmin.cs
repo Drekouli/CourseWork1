@@ -56,5 +56,13 @@ namespace Factory
             this.Hide();
             formMaterials.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormFurniture formFurniture = new FormFurniture(true);
+            formFurniture.Closed += (s, args) => this.Close();
+            this.Hide();
+            formFurniture.Show();
+        }
     }
 }

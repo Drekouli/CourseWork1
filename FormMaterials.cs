@@ -241,7 +241,7 @@ namespace Factory
             string searchString = "";
             if (dgv == dgv_materials) 
             {
-                searchString = $"SELECT * FROM table_material_order where concat(material_order_name, material_order_count, material_order_creation_date, material_order_receive_date, material_order_options, material_order_receive) like '%{textBox_search_order.Text}%'";
+                searchString = $"SELECT * FROM table_material_order where concat(material_order_name, material_order_count, material_order_creation_date, material_order_receive_date, material_order_options) like '%{textBox_search_order.Text}%'";
             }
             else
             {

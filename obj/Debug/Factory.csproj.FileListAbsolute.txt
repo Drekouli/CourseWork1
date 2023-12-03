@@ -13,3 +13,4 @@ C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.For
 C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormStaff.resources
 C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormRegistration.resources
 C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormMaterials.resources
+C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormFurniture.resources

@@ -75,7 +75,7 @@ namespace Factory
                 {
                     textBox_Login.Text = "";
                     textBox_Password.Text = "";
-                    FormFurniture formFurniture = new FormFurniture();
+                    FormFurniture formFurniture = new FormFurniture(false);
                     formFurniture.Closed += (s, args) => this.Close();
                     this.Hide();
                     formFurniture.Show();
