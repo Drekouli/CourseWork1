@@ -87,7 +87,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button_staff);
             this.Controls.Add(this.button_accounts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Администратор";
             this.ResumeLayout(false);
 

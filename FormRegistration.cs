@@ -19,10 +19,14 @@ namespace Factory
 
         int selectedRow;
 
-        public FormRegistration()
+        public FormRegistration(bool admin)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            if (admin == true)
+            {
+                button_admin.Visible = true;
+            }
         }
 
         private void CreateColumns()

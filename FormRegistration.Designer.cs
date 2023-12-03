@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             this.groupBox_menu = new System.Windows.Forms.GroupBox();
+            this.button_save = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
+            this.button_edit = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
             this.groupBox_data = new System.Windows.Forms.GroupBox();
             this.textBox_access = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,10 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.textBox_login = new System.Windows.Forms.TextBox();
-            this.button_save = new System.Windows.Forms.Button();
-            this.button_delete = new System.Windows.Forms.Button();
-            this.button_edit = new System.Windows.Forms.Button();
-            this.button_add = new System.Windows.Forms.Button();
             this.dgv_auth = new System.Windows.Forms.DataGridView();
             this.button_admin = new System.Windows.Forms.Button();
             this.groupBox_menu.SuspendLayout();
@@ -58,6 +59,50 @@
             this.groupBox_menu.Size = new System.Drawing.Size(213, 115);
             this.groupBox_menu.TabIndex = 15;
             this.groupBox_menu.TabStop = false;
+            // 
+            // button_save
+            // 
+            this.button_save.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_save.Location = new System.Drawing.Point(6, 80);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(200, 28);
+            this.button_save.TabIndex = 11;
+            this.button_save.Text = "Сохранить";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // button_delete
+            // 
+            this.button_delete.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_delete.Location = new System.Drawing.Point(6, 46);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(200, 28);
+            this.button_delete.TabIndex = 10;
+            this.button_delete.Text = "Удалить";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // button_edit
+            // 
+            this.button_edit.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_edit.Location = new System.Drawing.Point(109, 12);
+            this.button_edit.Name = "button_edit";
+            this.button_edit.Size = new System.Drawing.Size(97, 28);
+            this.button_edit.TabIndex = 9;
+            this.button_edit.Text = "Изменить";
+            this.button_edit.UseVisualStyleBackColor = true;
+            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
+            // 
+            // button_add
+            // 
+            this.button_add.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_add.Location = new System.Drawing.Point(6, 12);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(97, 28);
+            this.button_add.TabIndex = 8;
+            this.button_add.Text = "Добавить";
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // groupBox_data
             // 
@@ -128,50 +173,6 @@
             this.textBox_login.Size = new System.Drawing.Size(205, 23);
             this.textBox_login.TabIndex = 15;
             // 
-            // button_save
-            // 
-            this.button_save.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_save.Location = new System.Drawing.Point(6, 80);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(200, 28);
-            this.button_save.TabIndex = 11;
-            this.button_save.Text = "Сохранить";
-            this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
-            // 
-            // button_delete
-            // 
-            this.button_delete.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_delete.Location = new System.Drawing.Point(6, 46);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(200, 28);
-            this.button_delete.TabIndex = 10;
-            this.button_delete.Text = "Удалить";
-            this.button_delete.UseVisualStyleBackColor = true;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
-            // 
-            // button_edit
-            // 
-            this.button_edit.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_edit.Location = new System.Drawing.Point(109, 12);
-            this.button_edit.Name = "button_edit";
-            this.button_edit.Size = new System.Drawing.Size(97, 28);
-            this.button_edit.TabIndex = 9;
-            this.button_edit.Text = "Изменить";
-            this.button_edit.UseVisualStyleBackColor = true;
-            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
-            // 
-            // button_add
-            // 
-            this.button_add.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_add.Location = new System.Drawing.Point(6, 12);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(97, 28);
-            this.button_add.TabIndex = 8;
-            this.button_add.Text = "Добавить";
-            this.button_add.UseVisualStyleBackColor = true;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
-            // 
             // dgv_auth
             // 
             this.dgv_auth.AllowUserToAddRows = false;
@@ -212,8 +213,10 @@
             this.Controls.Add(this.groupBox_data);
             this.Controls.Add(this.groupBox_menu);
             this.Controls.Add(this.dgv_auth);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegistration";
-            this.Text = "FormRegistration";
+            this.Text = "Аккаунты";
             this.Load += new System.EventHandler(this.FormRegistration_Load);
             this.groupBox_menu.ResumeLayout(false);
             this.groupBox_data.ResumeLayout(false);

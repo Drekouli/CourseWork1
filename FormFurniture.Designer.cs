@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFurniture));
             this.groupBox_order = new System.Windows.Forms.GroupBox();
             this.dgv_furniture_order = new System.Windows.Forms.DataGridView();
             this.groupBox_menu_order = new System.Windows.Forms.GroupBox();
@@ -51,6 +52,7 @@
             this.button_edit = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.button_admin = new System.Windows.Forms.Button();
+            this.button_equipment = new System.Windows.Forms.Button();
             this.groupBox_order.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_furniture_order)).BeginInit();
             this.groupBox_menu_order.SuspendLayout();
@@ -318,15 +320,30 @@
             this.button_admin.Visible = false;
             this.button_admin.Click += new System.EventHandler(this.button_admin_Click);
             // 
+            // button_equipment
+            // 
+            this.button_equipment.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_equipment.Location = new System.Drawing.Point(1194, -1);
+            this.button_equipment.Name = "button_equipment";
+            this.button_equipment.Size = new System.Drawing.Size(127, 30);
+            this.button_equipment.TabIndex = 21;
+            this.button_equipment.Text = "Оборудование";
+            this.button_equipment.UseVisualStyleBackColor = true;
+            this.button_equipment.Click += new System.EventHandler(this.button_equipment_Click);
+            // 
             // FormFurniture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1320, 688);
+            this.Controls.Add(this.button_equipment);
             this.Controls.Add(this.groupBox_order);
             this.Controls.Add(this.groupBox_available);
             this.Controls.Add(this.button_admin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormFurniture";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Мебель";
             this.Load += new System.EventHandler(this.FormFurniture_Load);
             this.groupBox_order.ResumeLayout(false);
@@ -368,5 +385,6 @@
         private System.Windows.Forms.Button button_edit;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_admin;
+        private System.Windows.Forms.Button button_equipment;
     }
 }

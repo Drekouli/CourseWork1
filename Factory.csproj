@@ -52,6 +52,12 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEquipment.Designer.cs">
+      <DependentUpon>FormEquipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFurniture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEquipment.resx">
+      <DependentUpon>FormEquipment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFurniture.resx">
       <DependentUpon>FormFurniture.cs</DependentUpon>

@@ -161,10 +161,6 @@ namespace Factory
         {
             groupBox_data.Enabled = false;
             string[] fio = textBox_fio.Text.Split(' ');
-            var post = textBox_post.Text;
-            var salary = textBox_salary.Text;
-            string employ = date_employ.Value.ToString("yyyy-MM-dd");
-            string dismis = date_dismis.Value.ToString("yyyy-MM-dd");
             string addQuery = "";
 
             if (checkBox_eye.Checked)
@@ -180,18 +176,7 @@ namespace Factory
             var command = new SqlCommand(addQuery, database.GetConnection());
             database.openConnection();
             command.ExecuteNonQuery();
-            /*
-            try
-            {
-                var command = new SqlCommand(addQuery, database.GetConnection());
-                database.openConnection();
-                command.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Вы пытаетесь добавить уже существующую запись.\nПожалуйста, измените запись.\nЕсли вы уверены, что добавляете новую запись - обратитесь к системному администратору за помощью", "Внимание!");
-            }
-            */
+ 
             database.closeConnection();
         }
         private void button_save_Click(object sender, EventArgs e)

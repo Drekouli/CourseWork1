@@ -43,7 +43,7 @@ namespace Factory
 
         private void button_accounts_Click(object sender, EventArgs e)
         {
-            FormRegistration formRegistration = new FormRegistration();
+            FormRegistration formRegistration = new FormRegistration(true);
             formRegistration.Closed += (s, args) => this.Close();
             this.Hide();
             formRegistration.Show();

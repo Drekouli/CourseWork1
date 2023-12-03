@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.textBox_Login = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +39,7 @@
             // textBox_Login
             // 
             this.textBox_Login.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Login.Location = new System.Drawing.Point(120, 42);
+            this.textBox_Login.Location = new System.Drawing.Point(104, 15);
             this.textBox_Login.Name = "textBox_Login";
             this.textBox_Login.Size = new System.Drawing.Size(172, 33);
             this.textBox_Login.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(28, 45);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 25);
             this.label1.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(28, 84);
+            this.label2.Location = new System.Drawing.Point(12, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 25);
             this.label2.TabIndex = 3;
@@ -66,7 +67,7 @@
             // textBox_Password
             // 
             this.textBox_Password.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Password.Location = new System.Drawing.Point(120, 81);
+            this.textBox_Password.Location = new System.Drawing.Point(104, 54);
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(172, 33);
             this.textBox_Password.TabIndex = 2;
@@ -74,9 +75,9 @@
             // button_login
             // 
             this.button_login.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_login.Location = new System.Drawing.Point(105, 135);
+            this.button_login.Location = new System.Drawing.Point(17, 113);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(86, 35);
+            this.button_login.Size = new System.Drawing.Size(259, 35);
             this.button_login.TabIndex = 4;
             this.button_login.Text = "Войти";
             this.button_login.UseVisualStyleBackColor = true;
@@ -86,13 +87,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 187);
+            this.ClientSize = new System.Drawing.Size(294, 160);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_Login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);

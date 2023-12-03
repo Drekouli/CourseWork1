@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMaterials));
             this.groupBox_menu = new System.Windows.Forms.GroupBox();
             this.button_search = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
@@ -497,7 +498,10 @@
             this.Controls.Add(this.groupBox_order);
             this.Controls.Add(this.groupBox_available);
             this.Controls.Add(this.button_admin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMaterials";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Материалы";
             this.Load += new System.EventHandler(this.FormMaterials_Load);
             this.groupBox_menu.ResumeLayout(false);

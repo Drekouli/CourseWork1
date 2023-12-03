@@ -274,7 +274,6 @@ namespace Factory
                     int id = Convert.ToInt32(dgv_furniture_order.Rows[selectedRow].Cells[0].Value);
                     var updateQuery = $"UPDATE table_furniture_available SET furniture_count = {available_furniture} WHERE furniture_name = '{name}'\n" +
                         $"UPDATE table_furniture_order SET furniture_order_sent = 1 WHERE furniture_order_id = {id}";
-
                     var command = new SqlCommand(updateQuery, database.GetConnection());
                     command.ExecuteNonQuery();
                     database.closeConnection();
@@ -301,6 +300,14 @@ namespace Factory
             {
                 checkBox_sent.Text = "Не отправлено";
             }
+        }
+
+        private void button_equipment_Click(object sender, EventArgs e)
+        {
+            FormEquipment formEquipment = new FormEquipment();
+            formEquipment.Closed += (s, args) => this.Close();
+            this.Hide();
+            formEquipment.Show();
         }
     }
 }
