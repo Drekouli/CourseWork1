@@ -64,6 +64,12 @@
     <Compile Include="FormFurniture.Designer.cs">
       <DependentUpon>FormFurniture.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFurnitureMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFurnitureMaterials.Designer.cs">
+      <DependentUpon>FormFurnitureMaterials.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMaterials.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormFurniture.resx">
       <DependentUpon>FormFurniture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFurnitureMaterials.resx">
+      <DependentUpon>FormFurnitureMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

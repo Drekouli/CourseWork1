@@ -8,31 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Factory
 {
-
-    public partial class FormEquipment : Form
+    public partial class FormFurnitureMaterials : Form
     {
         DataBase database = new DataBase();
 
         int selectedRow;
         bool update = false;
 
-        public FormEquipment(byte user)
+        public FormFurnitureMaterials(int user)
         {
             InitializeComponent();
             if (user == 1)
             {
                 button_admin.Visible = true;
             }
-            else if (user == 2)
-            {
-                button_furniture.Visible = true;
-            }
         }
-
 
         private void button_staff_Click(object sender, EventArgs e)
         {
@@ -143,10 +136,10 @@ namespace Factory
             {
                 command.ExecuteNonQuery();
             }
-            catch (Exception) 
+            catch (Exception)
             {
                 MessageBox.Show("Введён id несуществующего сотрудника");
-            }   
+            }
             database.closeConnection();
         }
         private void button_save_Click(object sender, EventArgs e)
@@ -225,6 +218,11 @@ namespace Factory
             FormFurniture formFurniture = new FormFurniture(false);
             this.Hide();
             formFurniture.Show();
+        }
+
+        private void FormFurnitureMaterials_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

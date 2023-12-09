@@ -54,7 +54,7 @@ namespace Factory
                 {
                     textBox_Login.Text = "";
                     textBox_Password.Text = "";
-                    FormStaff formStaff = new FormStaff(false);
+                    FormStaff formStaff = new FormStaff(0);
                     formStaff.Closed += (s, args) => this.Close();
                     this.Hide();
                     formStaff.Show();

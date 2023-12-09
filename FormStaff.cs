@@ -19,13 +19,19 @@ namespace Factory
         int selectedRow;
         bool update = false;
 
-        public FormStaff(bool admin)
+        public FormStaff(byte user)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            if (admin) 
+            if (user == 1) 
             { 
                 button_admin.Visible = true; 
+            }
+            else if (user == 2)
+            {
+                groupBox_data.Visible = false;
+                groupBox_menu.Visible = false;
+                button_equipment.Visible = true;
             }
         }
 
@@ -76,7 +82,6 @@ namespace Factory
         private void button_admin_Click(object sender, EventArgs e)
         {
             FormAdmin formAdmin = new FormAdmin();
-            formAdmin.Closed += (s, args) => this.Close();
             this.Hide();
             formAdmin.Show();
         }
@@ -137,6 +142,7 @@ namespace Factory
         }
         private void Update()
         {
+            groupBox_data.Enabled = false;
             int id = Convert.ToInt32(dgv_staff.Rows[selectedRow].Cells[0].Value);
             string[] fio = textBox_fio.Text.Split(' ');
             string addQuery = "";
@@ -233,7 +239,7 @@ namespace Factory
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            Delete();
+            AskDelete(dgv_staff);
             RefreshDgv(dgv_staff);
         }
 
@@ -241,6 +247,16 @@ namespace Factory
         {
             groupBox_data.Enabled = true;
             update = true;
+        }
+
+        private void AskDelete(DataGridView dgv)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите безвозвратно удалить эту запись?", "Внимание!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Delete();
+                RefreshDgv(dgv);
+            }
         }
 
         private void textBox_salary_KeyPress(object sender, KeyPressEventArgs e)
@@ -251,5 +267,11 @@ namespace Factory
             }
         }
 
+        private void button_equipment_Click(object sender, EventArgs e)
+        {
+            FormEquipment formEquipment = new FormEquipment(0);
+            this.Hide();
+            formEquipment.Show();
+        }
     }
 }

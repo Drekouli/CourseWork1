@@ -53,6 +53,7 @@ namespace Factory
             this.textBox_post = new System.Windows.Forms.TextBox();
             this.textBox_fio = new System.Windows.Forms.TextBox();
             this.button_admin = new System.Windows.Forms.Button();
+            this.button_equipment = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_staff)).BeginInit();
             this.groupBox_menu.SuspendLayout();
             this.groupBox_data.SuspendLayout();
@@ -302,11 +303,25 @@ namespace Factory
             this.button_admin.Visible = false;
             this.button_admin.Click += new System.EventHandler(this.button_admin_Click);
             // 
+            // button_equipment
+            // 
+            this.button_equipment.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_equipment.Location = new System.Drawing.Point(-1, -1);
+            this.button_equipment.Name = "button_equipment";
+            this.button_equipment.Size = new System.Drawing.Size(27, 20);
+            this.button_equipment.TabIndex = 18;
+            this.button_equipment.Text = "<-";
+            this.button_equipment.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button_equipment.UseVisualStyleBackColor = true;
+            this.button_equipment.Visible = false;
+            this.button_equipment.Click += new System.EventHandler(this.button_equipment_Click);
+            // 
             // FormStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 638);
+            this.Controls.Add(this.button_equipment);
             this.Controls.Add(this.groupBox_data);
             this.Controls.Add(this.button_admin);
             this.Controls.Add(this.groupBox_menu);
@@ -351,5 +366,6 @@ namespace Factory
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker date_dismis;
         private System.Windows.Forms.Button button_admin;
+        private System.Windows.Forms.Button button_equipment;
     }
 }

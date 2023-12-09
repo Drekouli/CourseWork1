@@ -323,7 +323,7 @@
             // button_equipment
             // 
             this.button_equipment.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_equipment.Location = new System.Drawing.Point(1194, -1);
+            this.button_equipment.Location = new System.Drawing.Point(1194, 0);
             this.button_equipment.Name = "button_equipment";
             this.button_equipment.Size = new System.Drawing.Size(127, 30);
             this.button_equipment.TabIndex = 21;

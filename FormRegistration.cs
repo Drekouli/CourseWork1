@@ -135,9 +135,18 @@ namespace Factory
             }
 }
 
+        private void AskDelete(DataGridView dgv)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите безвозвратно удалить эту запись?", "Внимание!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Delete();
+                RefreshDgv(dgv);
+            }
+        }
         private void button_delete_Click(object sender, EventArgs e)
         {
-            Delete();
+            AskDelete(dgv_auth);
             RefreshDgv(dgv_auth);
         }
 

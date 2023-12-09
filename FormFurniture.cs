@@ -304,7 +304,7 @@ namespace Factory
 
         private void button_equipment_Click(object sender, EventArgs e)
         {
-            FormEquipment formEquipment = new FormEquipment();
+            FormEquipment formEquipment = new FormEquipment(0);
             formEquipment.Closed += (s, args) => this.Close();
             this.Hide();
             formEquipment.Show();

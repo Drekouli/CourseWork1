@@ -35,7 +35,7 @@ namespace Factory
 
         private void button_staff_Click(object sender, EventArgs e)
         {
-            FormStaff formStaff = new FormStaff(true);
+            FormStaff formStaff = new FormStaff(1);
             formStaff.Closed += (s, args) => this.Close();
             this.Hide();
             formStaff.Show();
@@ -63,6 +63,22 @@ namespace Factory
             formFurniture.Closed += (s, args) => this.Close();
             this.Hide();
             formFurniture.Show();
+        }
+
+        private void button_equipment_Click(object sender, EventArgs e)
+        {
+            FormEquipment formEquipment = new FormEquipment(1);
+            formEquipment.Closed += (s, args) => this.Close();
+            this.Hide();
+            formEquipment.Show();
+        }
+
+        private void button_furniture_materials_Click(object sender, EventArgs e)
+        {
+            FormFurnitureMaterials formFurnitureMaterials = new FormFurnitureMaterials(1);
+            formFurnitureMaterials.Closed += (s, args) => this.Close();
+            this.Hide();
+            formFurnitureMaterials.Show();
         }
     }
 }

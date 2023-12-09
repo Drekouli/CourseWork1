@@ -1,6 +1,6 @@
 ﻿namespace Factory
 {
-    partial class FormEquipment
+    partial class FormFurnitureMaterials
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEquipment));
-            this.button_admin = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFurnitureMaterials));
+            this.button_furniture = new System.Windows.Forms.Button();
+            this.button_equipment = new System.Windows.Forms.Button();
             this.groupBox_data = new System.Windows.Forms.GroupBox();
             this.button_staff = new System.Windows.Forms.Button();
             this.textBox_staff_id = new System.Windows.Forms.TextBox();
@@ -48,25 +49,35 @@
             this.button_edit = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.dgv_equipment = new System.Windows.Forms.DataGridView();
-            this.button_equipment = new System.Windows.Forms.Button();
-            this.button_furniture = new System.Windows.Forms.Button();
+            this.button_admin = new System.Windows.Forms.Button();
             this.groupBox_data.SuspendLayout();
             this.groupBox_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_equipment)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_admin
+            // button_furniture
             // 
-            this.button_admin.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_admin.Location = new System.Drawing.Point(-1, -1);
-            this.button_admin.Name = "button_admin";
-            this.button_admin.Size = new System.Drawing.Size(27, 20);
-            this.button_admin.TabIndex = 22;
-            this.button_admin.Text = "<-";
-            this.button_admin.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button_admin.UseVisualStyleBackColor = true;
-            this.button_admin.Visible = false;
-            this.button_admin.Click += new System.EventHandler(this.button_admin_Click);
+            this.button_furniture.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_furniture.Location = new System.Drawing.Point(-1, -1);
+            this.button_furniture.Name = "button_furniture";
+            this.button_furniture.Size = new System.Drawing.Size(27, 20);
+            this.button_furniture.TabIndex = 33;
+            this.button_furniture.Text = "<-";
+            this.button_furniture.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button_furniture.UseVisualStyleBackColor = true;
+            this.button_furniture.Visible = false;
+            // 
+            // button_equipment
+            // 
+            this.button_equipment.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_equipment.Location = new System.Drawing.Point(-1, -1);
+            this.button_equipment.Name = "button_equipment";
+            this.button_equipment.Size = new System.Drawing.Size(27, 20);
+            this.button_equipment.TabIndex = 32;
+            this.button_equipment.Text = "<-";
+            this.button_equipment.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button_equipment.UseVisualStyleBackColor = true;
+            this.button_equipment.Visible = false;
             // 
             // groupBox_data
             // 
@@ -83,7 +94,7 @@
             this.groupBox_data.Location = new System.Drawing.Point(217, 21);
             this.groupBox_data.Name = "groupBox_data";
             this.groupBox_data.Size = new System.Drawing.Size(430, 175);
-            this.groupBox_data.TabIndex = 25;
+            this.groupBox_data.TabIndex = 31;
             this.groupBox_data.TabStop = false;
             // 
             // button_staff
@@ -95,7 +106,6 @@
             this.button_staff.TabIndex = 17;
             this.button_staff.Text = "Сотрудники";
             this.button_staff.UseVisualStyleBackColor = true;
-            this.button_staff.Click += new System.EventHandler(this.button_staff_Click);
             // 
             // textBox_staff_id
             // 
@@ -104,7 +114,6 @@
             this.textBox_staff_id.Name = "textBox_staff_id";
             this.textBox_staff_id.Size = new System.Drawing.Size(205, 23);
             this.textBox_staff_id.TabIndex = 29;
-            this.textBox_staff_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_staff_id_KeyPress);
             // 
             // textBox_options
             // 
@@ -183,7 +192,7 @@
             this.groupBox_menu.Location = new System.Drawing.Point(0, 21);
             this.groupBox_menu.Name = "groupBox_menu";
             this.groupBox_menu.Size = new System.Drawing.Size(212, 175);
-            this.groupBox_menu.TabIndex = 24;
+            this.groupBox_menu.TabIndex = 30;
             this.groupBox_menu.TabStop = false;
             // 
             // button_search
@@ -195,7 +204,6 @@
             this.button_search.TabIndex = 16;
             this.button_search.Text = "Найти";
             this.button_search.UseVisualStyleBackColor = true;
-            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // textBox_search
             // 
@@ -214,7 +222,6 @@
             this.button_save.TabIndex = 11;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_delete
             // 
@@ -225,7 +232,6 @@
             this.button_delete.TabIndex = 10;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = true;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_edit
             // 
@@ -236,7 +242,6 @@
             this.button_edit.TabIndex = 9;
             this.button_edit.Text = "Изменить";
             this.button_edit.UseVisualStyleBackColor = true;
-            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
             // 
             // button_add
             // 
@@ -247,7 +252,6 @@
             this.button_add.TabIndex = 8;
             this.button_add.Text = "Добавить";
             this.button_add.UseVisualStyleBackColor = true;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // dgv_equipment
             // 
@@ -263,39 +267,25 @@
             this.dgv_equipment.RowHeadersVisible = false;
             this.dgv_equipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_equipment.Size = new System.Drawing.Size(648, 457);
-            this.dgv_equipment.TabIndex = 23;
-            this.dgv_equipment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_equipment_CellClick);
+            this.dgv_equipment.TabIndex = 29;
             // 
-            // button_equipment
+            // button_admin
             // 
-            this.button_equipment.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_equipment.Location = new System.Drawing.Point(-1, -1);
-            this.button_equipment.Name = "button_equipment";
-            this.button_equipment.Size = new System.Drawing.Size(27, 20);
-            this.button_equipment.TabIndex = 26;
-            this.button_equipment.Text = "<-";
-            this.button_equipment.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button_equipment.UseVisualStyleBackColor = true;
-            this.button_equipment.Visible = false;
+            this.button_admin.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_admin.Location = new System.Drawing.Point(-1, -1);
+            this.button_admin.Name = "button_admin";
+            this.button_admin.Size = new System.Drawing.Size(27, 20);
+            this.button_admin.TabIndex = 28;
+            this.button_admin.Text = "<-";
+            this.button_admin.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button_admin.UseVisualStyleBackColor = true;
+            this.button_admin.Visible = false;
             // 
-            // button_furniture
-            // 
-            this.button_furniture.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_furniture.Location = new System.Drawing.Point(-1, -1);
-            this.button_furniture.Name = "button_furniture";
-            this.button_furniture.Size = new System.Drawing.Size(27, 20);
-            this.button_furniture.TabIndex = 27;
-            this.button_furniture.Text = "<-";
-            this.button_furniture.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button_furniture.UseVisualStyleBackColor = true;
-            this.button_furniture.Visible = false;
-            this.button_furniture.Click += new System.EventHandler(this.button_furniture_Click);
-            // 
-            // FormEquipment
+            // FormFurnitureMaterials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 661);
+            this.ClientSize = new System.Drawing.Size(648, 654);
             this.Controls.Add(this.button_furniture);
             this.Controls.Add(this.button_equipment);
             this.Controls.Add(this.groupBox_data);
@@ -304,10 +294,10 @@
             this.Controls.Add(this.button_admin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormEquipment";
+            this.Name = "FormFurnitureMaterials";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Оборудование";
-            this.Load += new System.EventHandler(this.FormEquipment_Load);
+            this.Text = "Материалы на единицу мебели";
+            this.Load += new System.EventHandler(this.FormFurnitureMaterials_Load);
             this.groupBox_data.ResumeLayout(false);
             this.groupBox_data.PerformLayout();
             this.groupBox_menu.ResumeLayout(false);
@@ -319,8 +309,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_admin;
+        private System.Windows.Forms.Button button_furniture;
+        private System.Windows.Forms.Button button_equipment;
         private System.Windows.Forms.GroupBox groupBox_data;
+        private System.Windows.Forms.Button button_staff;
+        private System.Windows.Forms.TextBox textBox_staff_id;
         private System.Windows.Forms.TextBox textBox_options;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker date_receive;
@@ -336,9 +329,6 @@
         private System.Windows.Forms.Button button_edit;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.DataGridView dgv_equipment;
-        private System.Windows.Forms.TextBox textBox_staff_id;
-        private System.Windows.Forms.Button button_staff;
-        private System.Windows.Forms.Button button_equipment;
-        private System.Windows.Forms.Button button_furniture;
+        private System.Windows.Forms.Button button_admin;
     }
 }
