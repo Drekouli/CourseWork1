@@ -48,7 +48,6 @@
             this.button_edit = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.dgv_equipment = new System.Windows.Forms.DataGridView();
-            this.button_equipment = new System.Windows.Forms.Button();
             this.button_furniture = new System.Windows.Forms.Button();
             this.groupBox_data.SuspendLayout();
             this.groupBox_menu.SuspendLayout();
@@ -266,22 +265,10 @@
             this.dgv_equipment.TabIndex = 23;
             this.dgv_equipment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_equipment_CellClick);
             // 
-            // button_equipment
-            // 
-            this.button_equipment.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_equipment.Location = new System.Drawing.Point(-1, -1);
-            this.button_equipment.Name = "button_equipment";
-            this.button_equipment.Size = new System.Drawing.Size(27, 20);
-            this.button_equipment.TabIndex = 26;
-            this.button_equipment.Text = "<-";
-            this.button_equipment.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button_equipment.UseVisualStyleBackColor = true;
-            this.button_equipment.Visible = false;
-            // 
             // button_furniture
             // 
             this.button_furniture.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_furniture.Location = new System.Drawing.Point(-1, -1);
+            this.button_furniture.Location = new System.Drawing.Point(0, -1);
             this.button_furniture.Name = "button_furniture";
             this.button_furniture.Size = new System.Drawing.Size(27, 20);
             this.button_furniture.TabIndex = 27;
@@ -297,7 +284,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 661);
             this.Controls.Add(this.button_furniture);
-            this.Controls.Add(this.button_equipment);
             this.Controls.Add(this.groupBox_data);
             this.Controls.Add(this.groupBox_menu);
             this.Controls.Add(this.dgv_equipment);
@@ -338,7 +324,6 @@
         private System.Windows.Forms.DataGridView dgv_equipment;
         private System.Windows.Forms.TextBox textBox_staff_id;
         private System.Windows.Forms.Button button_staff;
-        private System.Windows.Forms.Button button_equipment;
         private System.Windows.Forms.Button button_furniture;
     }
 }

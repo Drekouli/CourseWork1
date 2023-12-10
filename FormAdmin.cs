@@ -67,7 +67,7 @@ namespace Factory
 
         private void button_equipment_Click(object sender, EventArgs e)
         {
-            FormEquipment formEquipment = new FormEquipment(1);
+            FormEquipment formEquipment = new FormEquipment(true);
             formEquipment.Closed += (s, args) => this.Close();
             this.Hide();
             formEquipment.Show();
@@ -75,7 +75,7 @@ namespace Factory
 
         private void button_furniture_materials_Click(object sender, EventArgs e)
         {
-            FormFurnitureMaterials formFurnitureMaterials = new FormFurnitureMaterials(1);
+            FormFurnitureMaterials formFurnitureMaterials = new FormFurnitureMaterials(true);
             formFurnitureMaterials.Closed += (s, args) => this.Close();
             this.Hide();
             formFurnitureMaterials.Show();

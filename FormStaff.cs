@@ -22,7 +22,6 @@ namespace Factory
         public FormStaff(byte user)
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
             if (user == 1) 
             { 
                 button_admin.Visible = true; 
@@ -269,7 +268,7 @@ namespace Factory
 
         private void button_equipment_Click(object sender, EventArgs e)
         {
-            FormEquipment formEquipment = new FormEquipment(0);
+            FormEquipment formEquipment = new FormEquipment(false);
             this.Hide();
             formEquipment.Show();
         }

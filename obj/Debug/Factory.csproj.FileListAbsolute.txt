@@ -15,3 +15,5 @@ C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.For
 C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormMaterials.resources
 C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormFurniture.resources
 C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormEquipment.resources
+C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormFurnitureMaterials.resources
+C:\Users\Dreko\Desktop\Учёба\Курсовая\Factory\obj\Debug\Factory.FormMaterialsNeed.resources

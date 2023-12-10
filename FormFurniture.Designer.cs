@@ -32,6 +32,7 @@
             this.groupBox_order = new System.Windows.Forms.GroupBox();
             this.dgv_furniture_order = new System.Windows.Forms.DataGridView();
             this.groupBox_menu_order = new System.Windows.Forms.GroupBox();
+            this.button_order = new System.Windows.Forms.Button();
             this.checkBox_sent = new System.Windows.Forms.CheckBox();
             this.button_search_order = new System.Windows.Forms.Button();
             this.textBox_search_order = new System.Windows.Forms.TextBox();
@@ -53,6 +54,7 @@
             this.button_add = new System.Windows.Forms.Button();
             this.button_admin = new System.Windows.Forms.Button();
             this.button_equipment = new System.Windows.Forms.Button();
+            this.button_furniture_materials = new System.Windows.Forms.Button();
             this.groupBox_order.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_furniture_order)).BeginInit();
             this.groupBox_menu_order.SuspendLayout();
@@ -94,21 +96,34 @@
             // 
             // groupBox_menu_order
             // 
+            this.groupBox_menu_order.Controls.Add(this.button_order);
             this.groupBox_menu_order.Controls.Add(this.checkBox_sent);
             this.groupBox_menu_order.Controls.Add(this.button_search_order);
             this.groupBox_menu_order.Controls.Add(this.textBox_search_order);
             this.groupBox_menu_order.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox_menu_order.Location = new System.Drawing.Point(12, 39);
             this.groupBox_menu_order.Name = "groupBox_menu_order";
-            this.groupBox_menu_order.Size = new System.Drawing.Size(215, 180);
+            this.groupBox_menu_order.Size = new System.Drawing.Size(642, 180);
             this.groupBox_menu_order.TabIndex = 15;
             this.groupBox_menu_order.TabStop = false;
+            // 
+            // button_order
+            // 
+            this.button_order.Enabled = false;
+            this.button_order.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_order.Location = new System.Drawing.Point(436, 140);
+            this.button_order.Name = "button_order";
+            this.button_order.Size = new System.Drawing.Size(200, 28);
+            this.button_order.TabIndex = 17;
+            this.button_order.Text = "Заказать материалы";
+            this.button_order.UseVisualStyleBackColor = true;
+            this.button_order.Click += new System.EventHandler(this.button_order_Click);
             // 
             // checkBox_sent
             // 
             this.checkBox_sent.Enabled = false;
             this.checkBox_sent.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox_sent.Location = new System.Drawing.Point(87, 151);
+            this.checkBox_sent.Location = new System.Drawing.Point(72, 146);
             this.checkBox_sent.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox_sent.Name = "checkBox_sent";
             this.checkBox_sent.Size = new System.Drawing.Size(117, 21);
@@ -331,11 +346,23 @@
             this.button_equipment.UseVisualStyleBackColor = true;
             this.button_equipment.Click += new System.EventHandler(this.button_equipment_Click);
             // 
+            // button_furniture_materials
+            // 
+            this.button_furniture_materials.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_furniture_materials.Location = new System.Drawing.Point(991, 0);
+            this.button_furniture_materials.Name = "button_furniture_materials";
+            this.button_furniture_materials.Size = new System.Drawing.Size(197, 30);
+            this.button_furniture_materials.TabIndex = 22;
+            this.button_furniture_materials.Text = "Материалы для мебели";
+            this.button_furniture_materials.UseVisualStyleBackColor = true;
+            this.button_furniture_materials.Click += new System.EventHandler(this.button_furniture_materials_Click);
+            // 
             // FormFurniture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1320, 688);
+            this.Controls.Add(this.button_furniture_materials);
             this.Controls.Add(this.button_equipment);
             this.Controls.Add(this.groupBox_order);
             this.Controls.Add(this.groupBox_available);
@@ -386,5 +413,7 @@
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_admin;
         private System.Windows.Forms.Button button_equipment;
+        private System.Windows.Forms.Button button_furniture_materials;
+        private System.Windows.Forms.Button button_order;
     }
 }

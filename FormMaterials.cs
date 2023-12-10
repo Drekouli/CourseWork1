@@ -116,6 +116,7 @@ namespace Factory
             CreateColumns();
             RefreshDgv(dgv_materials);
             RefreshDgv(dgv_materials_order);
+            
         }
 
         private void dgv_materials_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -343,6 +344,12 @@ namespace Factory
             {
                 e.Handled = true;
             }
+        }
+
+        private void button_materials_need_Click(object sender, EventArgs e)
+        {
+            FormMaterialsNeed formMaterialsNeed = new FormMaterialsNeed();
+            formMaterialsNeed.Show();
         }
     }
 }

@@ -18,49 +18,45 @@ namespace Factory
         int selectedRow;
         bool update = false;
 
-        public FormFurnitureMaterials(int user)
+        public FormFurnitureMaterials(bool admin)
         {
             InitializeComponent();
-            if (user == 1)
+            if (admin)
             {
                 button_admin.Visible = true;
             }
+            else
+            {
+                button_furniture.Visible = true;
+            }
         }
 
-        private void button_staff_Click(object sender, EventArgs e)
+        private void button_furniture_Click(object sender, EventArgs e)
         {
-            FormStaff formStaff = new FormStaff(2);
-            formStaff.Closed += (s, args) => this.Close();
+            FormFurniture formFurniture = new FormFurniture(false);
+            formFurniture.Closed += (s, args) => this.Close();
             this.Hide();
-            formStaff.Show();
+            formFurniture.Show();
         }
 
 
         private void CreateColumns()
         {
-            dgv_equipment.Columns.Add("equipment_name", "Код");
-            dgv_equipment.Columns.Add("equipment_gained_date", "Дата получения");
-            dgv_equipment.Columns.Add("equipment_staff_assign_id", "id владельца");
-            dgv_equipment.Columns.Add("equipment_options", "Описание");
-            dgv_equipment.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dgv_furniture_materials.Columns.Add("furniture_name", "Название");
+            dgv_furniture_materials.Columns.Add("materials_names", "Имена материалов");
+            dgv_furniture_materials.Columns.Add("materials_count", "Количество материалов");
+            dgv_furniture_materials.Columns.Add("furniture_description", "Описание");
         }
 
         private void ReadSingleRow(DataGridView dgv, IDataRecord record)
         {
-            try
-            {
-                dgv.Rows.Add(record.GetString(0), record.GetDateTime(1), record.GetInt32(2), record.GetString(3));
-            }
-            catch (Exception)
-            {
-                dgv.Rows.Add(record.GetString(0), record.GetDateTime(1), record.GetInt32(2), "");
-            }
+                dgv.Rows.Add(record.GetString(0), record.GetString(1), record.GetString(2), record.GetString(3));
         }
 
         private void RefreshDgv(DataGridView dgv)
         {
             dgv.Rows.Clear();
-            string queryString = $"SELECT * FROM table_equipment";
+            string queryString = $"SELECT * FROM table_furniture_materials";
 
             SqlCommand sqlCommand = new SqlCommand(queryString, database.GetConnection());
 
@@ -82,10 +78,10 @@ namespace Factory
             formAdmin.Show();
         }
 
-        private void FormEquipment_Load(object sender, EventArgs e)
+        private void FormFurnitureMaterials_Load(object sender, EventArgs e)
         {
             CreateColumns();
-            RefreshDgv(dgv_equipment);
+            RefreshDgv(dgv_furniture_materials);
         }
 
         private void dgv_equipment_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -94,20 +90,20 @@ namespace Factory
 
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgv_equipment.Rows[selectedRow];
+                DataGridViewRow row = dgv_furniture_materials.Rows[selectedRow];
 
-                textBox_name.Text = row.Cells[0].Value.ToString();
-                date_receive.Text = row.Cells[1].Value.ToString();
-                textBox_staff_id.Text = row.Cells[2].Value.ToString();
+                textBox_furniture_name.Text = row.Cells[0].Value.ToString();
+                textBox_materials_names.Text = row.Cells[1].Value.ToString();
+                textBox_materials_count.Text = row.Cells[2].Value.ToString();
                 textBox_options.Text = row.Cells[3].Value.ToString();
             }
         }
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            textBox_name.Text = "";
-            date_receive.Text = "";
-            textBox_staff_id.Text = "";
+            textBox_furniture_name.Text = "";
+            textBox_materials_names.Text = "";
+            textBox_materials_count.Text = "";
             textBox_options.Text = "";
             groupBox_data.Enabled = true;
         }
@@ -115,8 +111,9 @@ namespace Factory
         private void Update()
         {
             groupBox_data.Enabled = false;
-            string name = dgv_equipment.Rows[selectedRow].Cells[0].Value.ToString();
-            string addQuery = $"UPDATE table_equipment SET equipment_gained_date = '{date_receive.Text}', equipment_staff_assign_id = 'a{textBox_staff_id.Text}', equipment_options = '{textBox_options.Text}' WHERE equipment_name = '{name}'";
+            textBox_furniture_name.Enabled = true;
+            string name = dgv_furniture_materials.Rows[selectedRow].Cells[0].Value.ToString();
+            string addQuery = $"UPDATE table_furniture_materials SET materials_names = '{textBox_materials_names.Text}', materials_count = '{textBox_materials_count.Text}', furniture_description = '{textBox_options.Text}' WHERE furniture_name = '{name}'";
 
             var command = new SqlCommand(addQuery, database.GetConnection());
             database.openConnection();
@@ -127,19 +124,13 @@ namespace Factory
         private void Add()
         {
             groupBox_data.Enabled = false;
-            string addQuery = $"INSERT INTO table_equipment(equipment_name, equipment_gained_date, equipment_staff_assign_id, equipment_options) VALUES" +
-            $"('{textBox_name.Text}', '{date_receive.Text}', '{textBox_staff_id.Text}', '{textBox_options.Text}')";
+            string addQuery = $"INSERT INTO table_furniture_materials(furniture_name, materials_names, materials_count, furniture_description) VALUES" +
+            $"('{textBox_furniture_name.Text}', '{textBox_materials_names.Text}', '{textBox_materials_count.Text}', '{textBox_options.Text}')";
 
             var command = new SqlCommand(addQuery, database.GetConnection());
             database.openConnection();
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Введён id несуществующего сотрудника");
-            }
+            
+            command.ExecuteNonQuery();
             database.closeConnection();
         }
         private void button_save_Click(object sender, EventArgs e)
@@ -152,7 +143,7 @@ namespace Factory
             {
                 Add();
             }
-            RefreshDgv(dgv_equipment);
+            RefreshDgv(dgv_furniture_materials);
             update = false;
         }
 
@@ -160,7 +151,7 @@ namespace Factory
         {
             dgv.Rows.Clear();
 
-            string searchString = $"SELECT * FROM table_equipment where concat(equipment_name, equipment_gained_date, equipment_staff_assign_id, equipment_options) like '%{textBox_search.Text}%'";
+            string searchString = $"SELECT * FROM table_furniture_materials where concat(furniture_name, materials_names, materials_count, furniture_description) like '%{textBox_search.Text}%'";
 
             SqlCommand com = new SqlCommand(searchString, database.GetConnection());
 
@@ -177,15 +168,15 @@ namespace Factory
         }
         private void button_search_Click(object sender, EventArgs e)
         {
-            Search(dgv_equipment);
+            Search(dgv_furniture_materials);
         }
 
         private void Delete()
         {
             database.openConnection();
-            string name = dgv_equipment.Rows[selectedRow].Cells[0].Value.ToString();
+            string name = dgv_furniture_materials.Rows[selectedRow].Cells[0].Value.ToString();
 
-            var deleteQuery = $"DELETE FROM table_equipment where equipment_name = '{name}'";
+            var deleteQuery = $"DELETE FROM table_furniture_materials where furniture_name = '{name}'";
 
             var command = new SqlCommand(deleteQuery, database.GetConnection());
             command.ExecuteNonQuery();
@@ -196,33 +187,23 @@ namespace Factory
         private void button_delete_Click(object sender, EventArgs e)
         {
             Delete();
-            RefreshDgv(dgv_equipment);
+            RefreshDgv(dgv_furniture_materials);
         }
 
         private void button_edit_Click(object sender, EventArgs e)
         {
+            textBox_furniture_name.Enabled = false;
             groupBox_data.Enabled = true;
             update = true;
         }
 
-        private void textBox_staff_id_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox_materials_count_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
             }
         }
 
-        private void button_furniture_Click(object sender, EventArgs e)
-        {
-            FormFurniture formFurniture = new FormFurniture(false);
-            this.Hide();
-            formFurniture.Show();
-        }
-
-        private void FormFurnitureMaterials_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

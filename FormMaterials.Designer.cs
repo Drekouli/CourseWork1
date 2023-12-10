@@ -67,6 +67,7 @@
             this.button_edit_order = new System.Windows.Forms.Button();
             this.textBox_search_order = new System.Windows.Forms.TextBox();
             this.button_save_order = new System.Windows.Forms.Button();
+            this.button_materials_need = new System.Windows.Forms.Button();
             this.groupBox_menu.SuspendLayout();
             this.groupBox_data.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_materials)).BeginInit();
@@ -490,11 +491,24 @@
             this.button_save_order.UseVisualStyleBackColor = true;
             this.button_save_order.Click += new System.EventHandler(this.button_save_order_Click);
             // 
+            // button_materials_need
+            // 
+            this.button_materials_need.BackColor = System.Drawing.SystemColors.Control;
+            this.button_materials_need.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_materials_need.Location = new System.Drawing.Point(1153, 0);
+            this.button_materials_need.Name = "button_materials_need";
+            this.button_materials_need.Size = new System.Drawing.Size(166, 28);
+            this.button_materials_need.TabIndex = 17;
+            this.button_materials_need.Text = "Заказы от мастера";
+            this.button_materials_need.UseVisualStyleBackColor = false;
+            this.button_materials_need.Click += new System.EventHandler(this.button_materials_need_Click);
+            // 
             // FormMaterials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1318, 686);
+            this.Controls.Add(this.button_materials_need);
             this.Controls.Add(this.groupBox_order);
             this.Controls.Add(this.groupBox_available);
             this.Controls.Add(this.button_admin);
@@ -560,5 +574,6 @@
         private System.Windows.Forms.Button button_delete_order;
         private System.Windows.Forms.Button button_edit_order;
         private System.Windows.Forms.Button button_add_order;
+        private System.Windows.Forms.Button button_materials_need;
     }
 }

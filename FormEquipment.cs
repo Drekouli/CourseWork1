@@ -20,14 +20,14 @@ namespace Factory
         int selectedRow;
         bool update = false;
 
-        public FormEquipment(byte user)
+        public FormEquipment(bool admin)
         {
             InitializeComponent();
-            if (user == 1)
+            if (admin)
             {
                 button_admin.Visible = true;
             }
-            else if (user == 2)
+            else
             {
                 button_furniture.Visible = true;
             }
@@ -123,7 +123,7 @@ namespace Factory
         {
             groupBox_data.Enabled = false;
             string name = dgv_equipment.Rows[selectedRow].Cells[0].Value.ToString();
-            string addQuery = $"UPDATE table_equipment SET equipment_gained_date = '{date_receive.Text}', equipment_staff_assign_id = 'a{textBox_staff_id.Text}', equipment_options = '{textBox_options.Text}' WHERE equipment_name = '{name}'";
+            string addQuery = $"UPDATE table_equipment SET equipment_gained_date = '{date_receive.Text}', equipment_staff_assign_id = '{textBox_staff_id.Text}', equipment_options = '{textBox_options.Text}' WHERE equipment_name = '{name}'";
 
             var command = new SqlCommand(addQuery, database.GetConnection());
             database.openConnection();

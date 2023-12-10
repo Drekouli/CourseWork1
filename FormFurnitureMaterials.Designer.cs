@@ -30,17 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFurnitureMaterials));
             this.button_furniture = new System.Windows.Forms.Button();
-            this.button_equipment = new System.Windows.Forms.Button();
             this.groupBox_data = new System.Windows.Forms.GroupBox();
-            this.button_staff = new System.Windows.Forms.Button();
-            this.textBox_staff_id = new System.Windows.Forms.TextBox();
+            this.textBox_materials_names = new System.Windows.Forms.TextBox();
+            this.textBox_materials_count = new System.Windows.Forms.TextBox();
             this.textBox_options = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.date_receive = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_name = new System.Windows.Forms.TextBox();
+            this.textBox_furniture_name = new System.Windows.Forms.TextBox();
             this.groupBox_menu = new System.Windows.Forms.GroupBox();
             this.button_search = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
@@ -48,11 +46,11 @@
             this.button_delete = new System.Windows.Forms.Button();
             this.button_edit = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
-            this.dgv_equipment = new System.Windows.Forms.DataGridView();
+            this.dgv_furniture_materials = new System.Windows.Forms.DataGridView();
             this.button_admin = new System.Windows.Forms.Button();
             this.groupBox_data.SuspendLayout();
             this.groupBox_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_equipment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_furniture_materials)).BeginInit();
             this.SuspendLayout();
             // 
             // button_furniture
@@ -67,29 +65,16 @@
             this.button_furniture.UseVisualStyleBackColor = true;
             this.button_furniture.Visible = false;
             // 
-            // button_equipment
-            // 
-            this.button_equipment.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_equipment.Location = new System.Drawing.Point(-1, -1);
-            this.button_equipment.Name = "button_equipment";
-            this.button_equipment.Size = new System.Drawing.Size(27, 20);
-            this.button_equipment.TabIndex = 32;
-            this.button_equipment.Text = "<-";
-            this.button_equipment.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button_equipment.UseVisualStyleBackColor = true;
-            this.button_equipment.Visible = false;
-            // 
             // groupBox_data
             // 
-            this.groupBox_data.Controls.Add(this.button_staff);
-            this.groupBox_data.Controls.Add(this.textBox_staff_id);
+            this.groupBox_data.Controls.Add(this.textBox_materials_names);
+            this.groupBox_data.Controls.Add(this.textBox_materials_count);
             this.groupBox_data.Controls.Add(this.textBox_options);
             this.groupBox_data.Controls.Add(this.label4);
-            this.groupBox_data.Controls.Add(this.date_receive);
             this.groupBox_data.Controls.Add(this.label3);
             this.groupBox_data.Controls.Add(this.label2);
             this.groupBox_data.Controls.Add(this.label1);
-            this.groupBox_data.Controls.Add(this.textBox_name);
+            this.groupBox_data.Controls.Add(this.textBox_furniture_name);
             this.groupBox_data.Enabled = false;
             this.groupBox_data.Location = new System.Drawing.Point(217, 21);
             this.groupBox_data.Name = "groupBox_data";
@@ -97,89 +82,78 @@
             this.groupBox_data.TabIndex = 31;
             this.groupBox_data.TabStop = false;
             // 
-            // button_staff
+            // textBox_materials_names
             // 
-            this.button_staff.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_staff.Location = new System.Drawing.Point(332, 99);
-            this.button_staff.Name = "button_staff";
-            this.button_staff.Size = new System.Drawing.Size(92, 23);
-            this.button_staff.TabIndex = 17;
-            this.button_staff.Text = "Сотрудники";
-            this.button_staff.UseVisualStyleBackColor = true;
+            this.textBox_materials_names.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_materials_names.Location = new System.Drawing.Point(164, 41);
+            this.textBox_materials_names.Name = "textBox_materials_names";
+            this.textBox_materials_names.Size = new System.Drawing.Size(255, 23);
+            this.textBox_materials_names.TabIndex = 30;
             // 
-            // textBox_staff_id
+            // textBox_materials_count
             // 
-            this.textBox_staff_id.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_staff_id.Location = new System.Drawing.Point(121, 99);
-            this.textBox_staff_id.Name = "textBox_staff_id";
-            this.textBox_staff_id.Size = new System.Drawing.Size(205, 23);
-            this.textBox_staff_id.TabIndex = 29;
+            this.textBox_materials_count.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_materials_count.Location = new System.Drawing.Point(164, 70);
+            this.textBox_materials_count.Name = "textBox_materials_count";
+            this.textBox_materials_count.Size = new System.Drawing.Size(255, 23);
+            this.textBox_materials_count.TabIndex = 29;
+            this.textBox_materials_count.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_materials_count_KeyPress);
             // 
             // textBox_options
             // 
             this.textBox_options.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_options.Location = new System.Drawing.Point(121, 70);
+            this.textBox_options.Location = new System.Drawing.Point(164, 99);
             this.textBox_options.Name = "textBox_options";
-            this.textBox_options.Size = new System.Drawing.Size(205, 23);
+            this.textBox_options.Size = new System.Drawing.Size(255, 23);
             this.textBox_options.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(4, 105);
+            this.label4.Location = new System.Drawing.Point(4, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 15);
+            this.label4.Size = new System.Drawing.Size(113, 15);
             this.label4.TabIndex = 22;
-            this.label4.Text = "id владельца";
-            // 
-            // date_receive
-            // 
-            this.date_receive.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.date_receive.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_receive.Location = new System.Drawing.Point(121, 41);
-            this.date_receive.Name = "date_receive";
-            this.date_receive.Size = new System.Drawing.Size(205, 23);
-            this.date_receive.TabIndex = 20;
-            this.date_receive.Value = new System.DateTime(2023, 11, 29, 0, 0, 0, 0);
+            this.label4.Text = "Описание мебели";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(4, 78);
+            this.label3.Location = new System.Drawing.Point(4, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
+            this.label3.Size = new System.Drawing.Size(154, 15);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Опции";
+            this.label3.Text = "Количество материалов";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(6, 49);
+            this.label2.Location = new System.Drawing.Point(6, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 15);
+            this.label2.Size = new System.Drawing.Size(123, 15);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Дата получения";
+            this.label2.Text = "Имена материалов";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 20);
+            this.label1.Location = new System.Drawing.Point(6, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 17;
             this.label1.Text = "Название";
             // 
-            // textBox_name
+            // textBox_furniture_name
             // 
-            this.textBox_name.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_name.Location = new System.Drawing.Point(121, 12);
-            this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(205, 23);
-            this.textBox_name.TabIndex = 15;
+            this.textBox_furniture_name.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_furniture_name.Location = new System.Drawing.Point(164, 12);
+            this.textBox_furniture_name.Name = "textBox_furniture_name";
+            this.textBox_furniture_name.Size = new System.Drawing.Size(255, 23);
+            this.textBox_furniture_name.TabIndex = 15;
             // 
             // groupBox_menu
             // 
@@ -204,6 +178,7 @@
             this.button_search.TabIndex = 16;
             this.button_search.Text = "Найти";
             this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // textBox_search
             // 
@@ -222,6 +197,7 @@
             this.button_save.TabIndex = 11;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_delete
             // 
@@ -232,6 +208,7 @@
             this.button_delete.TabIndex = 10;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_edit
             // 
@@ -242,6 +219,7 @@
             this.button_edit.TabIndex = 9;
             this.button_edit.Text = "Изменить";
             this.button_edit.UseVisualStyleBackColor = true;
+            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
             // 
             // button_add
             // 
@@ -252,22 +230,24 @@
             this.button_add.TabIndex = 8;
             this.button_add.Text = "Добавить";
             this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
-            // dgv_equipment
+            // dgv_furniture_materials
             // 
-            this.dgv_equipment.AllowUserToAddRows = false;
-            this.dgv_equipment.AllowUserToDeleteRows = false;
-            this.dgv_equipment.AllowUserToResizeRows = false;
-            this.dgv_equipment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_equipment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_equipment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_equipment.Location = new System.Drawing.Point(0, 198);
-            this.dgv_equipment.Name = "dgv_equipment";
-            this.dgv_equipment.ReadOnly = true;
-            this.dgv_equipment.RowHeadersVisible = false;
-            this.dgv_equipment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_equipment.Size = new System.Drawing.Size(648, 457);
-            this.dgv_equipment.TabIndex = 29;
+            this.dgv_furniture_materials.AllowUserToAddRows = false;
+            this.dgv_furniture_materials.AllowUserToDeleteRows = false;
+            this.dgv_furniture_materials.AllowUserToResizeRows = false;
+            this.dgv_furniture_materials.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_furniture_materials.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_furniture_materials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_furniture_materials.Location = new System.Drawing.Point(0, 198);
+            this.dgv_furniture_materials.Name = "dgv_furniture_materials";
+            this.dgv_furniture_materials.ReadOnly = true;
+            this.dgv_furniture_materials.RowHeadersVisible = false;
+            this.dgv_furniture_materials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_furniture_materials.Size = new System.Drawing.Size(648, 457);
+            this.dgv_furniture_materials.TabIndex = 29;
+            this.dgv_furniture_materials.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_equipment_CellClick);
             // 
             // button_admin
             // 
@@ -280,6 +260,7 @@
             this.button_admin.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button_admin.UseVisualStyleBackColor = true;
             this.button_admin.Visible = false;
+            this.button_admin.Click += new System.EventHandler(this.button_admin_Click);
             // 
             // FormFurnitureMaterials
             // 
@@ -287,10 +268,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 654);
             this.Controls.Add(this.button_furniture);
-            this.Controls.Add(this.button_equipment);
             this.Controls.Add(this.groupBox_data);
             this.Controls.Add(this.groupBox_menu);
-            this.Controls.Add(this.dgv_equipment);
+            this.Controls.Add(this.dgv_furniture_materials);
             this.Controls.Add(this.button_admin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -302,7 +282,7 @@
             this.groupBox_data.PerformLayout();
             this.groupBox_menu.ResumeLayout(false);
             this.groupBox_menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_equipment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_furniture_materials)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,17 +290,14 @@
         #endregion
 
         private System.Windows.Forms.Button button_furniture;
-        private System.Windows.Forms.Button button_equipment;
         private System.Windows.Forms.GroupBox groupBox_data;
-        private System.Windows.Forms.Button button_staff;
-        private System.Windows.Forms.TextBox textBox_staff_id;
+        private System.Windows.Forms.TextBox textBox_materials_count;
         private System.Windows.Forms.TextBox textBox_options;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker date_receive;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_name;
+        private System.Windows.Forms.TextBox textBox_furniture_name;
         private System.Windows.Forms.GroupBox groupBox_menu;
         private System.Windows.Forms.Button button_search;
         private System.Windows.Forms.TextBox textBox_search;
@@ -328,7 +305,8 @@
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_edit;
         private System.Windows.Forms.Button button_add;
-        private System.Windows.Forms.DataGridView dgv_equipment;
+        private System.Windows.Forms.DataGridView dgv_furniture_materials;
         private System.Windows.Forms.Button button_admin;
+        private System.Windows.Forms.TextBox textBox_materials_names;
     }
 }

@@ -76,6 +76,12 @@
     <Compile Include="FormMaterials.Designer.cs">
       <DependentUpon>FormMaterials.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMaterialsNeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaterialsNeed.Designer.cs">
+      <DependentUpon>FormMaterialsNeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMaterials.resx">
       <DependentUpon>FormMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaterialsNeed.resx">
+      <DependentUpon>FormMaterialsNeed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistration.resx">
       <DependentUpon>FormRegistration.cs</DependentUpon>
