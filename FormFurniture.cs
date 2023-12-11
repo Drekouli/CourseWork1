@@ -142,7 +142,6 @@ namespace Factory
                 {
                     checkBox_sent.Enabled = true;
                     checkBox_sent.Text = "Не отправлено";
-                    button_order.Enabled = true;
                 }
                 else if (Convert.ToBoolean(row.Cells[6].Value))
                 {
@@ -320,38 +319,6 @@ namespace Factory
             formFurnitureMaterials.Closed += (s, args) => this.Close();
             this.Hide();
             formFurnitureMaterials.Show();
-        }
-
-        private void Order()
-        {
-            int index = selectedRow;
-            var name = dgv_furniture_order.Rows[index].Cells[1].Value.ToString();
-            database.openConnection();
-            string Query = $"SELECT materials_names FROM table_furniture_materials WHERE furniture_name = '{name}'";
-            var command = new SqlCommand(Query, database.GetConnection());
-            string[] materials_names = command.ExecuteScalar().ToString().Split(' ');
-
-            Query = $"SELECT materials_count FROM table_furniture_materials WHERE furniture_name = '{name}'";
-            command = new SqlCommand(Query, database.GetConnection());
-            string[] materials_count = command.ExecuteScalar().ToString().Split(' ');
-
-            foreach (var material in materials_names) 
-            {
-                
-            }
-            foreach (var count in materials_count)
-            {
-                
-            }
-
-
-            database.closeConnection();
-        }
-
-        private void button_order_Click(object sender, EventArgs e)
-        {
-            Order();
-            button_order.Enabled = false;
         }
     }
 }

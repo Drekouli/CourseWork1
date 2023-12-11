@@ -100,7 +100,10 @@ namespace Factory
             {
                 ReadSingleRow(dgv, reader);
             }
+            
             reader.Close();
+            database.closeConnection();
+            CheckNeed();
         }
 
         private void button_admin_Click(object sender, EventArgs e)
@@ -110,13 +113,29 @@ namespace Factory
             this.Hide();
             formAdmin.Show();
         }
-
+        private void CheckNeed()
+        {
+            database.openConnection();
+            string Query = $"SELECT furniture_order_count FROM table_furniture_order WHERE furniture_order_materials = 0";
+            var command = new SqlCommand(Query, database.GetConnection());
+            int furniture_count = Convert.ToInt32(command.ExecuteScalar());
+            database.closeConnection();
+            if (furniture_count > 0)
+            { 
+                button_materials_need.BackColor = Color.Yellow;
+                button_materials_need.Enabled = true;
+            }
+            else
+            { 
+                button_materials_need.BackColor = Color.Gainsboro;
+                button_materials_need.Enabled = false;
+            }
+        }
         private void FormMaterials_Load(object sender, EventArgs e)
         {
             CreateColumns();
             RefreshDgv(dgv_materials);
-            RefreshDgv(dgv_materials_order);
-            
+            RefreshDgv(dgv_materials_order);   
         }
 
         private void dgv_materials_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -240,7 +259,7 @@ namespace Factory
         {
             dgv.Rows.Clear();
             string searchString = "";
-            if (dgv == dgv_materials) 
+            if (dgv == dgv_materials_order) 
             {
                 searchString = $"SELECT * FROM table_material_order where concat(material_order_name, material_order_count, material_order_creation_date, material_order_receive_date, material_order_options) like '%{textBox_search_order.Text}%'";
             }
@@ -248,12 +267,10 @@ namespace Factory
             {
                 searchString = $"SELECT * FROM table_material_available where concat(material_name, material_count, material_options) like '%{textBox_search.Text}%'";
             }
-
-            SqlCommand com = new SqlCommand(searchString, database.GetConnection());
-
             database.openConnection();
+            SqlCommand command = new SqlCommand(searchString, database.GetConnection());
 
-            SqlDataReader reader = com.ExecuteReader();
+            SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
@@ -349,7 +366,9 @@ namespace Factory
         private void button_materials_need_Click(object sender, EventArgs e)
         {
             FormMaterialsNeed formMaterialsNeed = new FormMaterialsNeed();
+            formMaterialsNeed.Closed += (s, args) => RefreshDgv(dgv_materials_order);
             formMaterialsNeed.Show();
         }
+
     }
 }

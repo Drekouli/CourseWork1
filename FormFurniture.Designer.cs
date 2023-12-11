@@ -32,7 +32,6 @@
             this.groupBox_order = new System.Windows.Forms.GroupBox();
             this.dgv_furniture_order = new System.Windows.Forms.DataGridView();
             this.groupBox_menu_order = new System.Windows.Forms.GroupBox();
-            this.button_order = new System.Windows.Forms.Button();
             this.checkBox_sent = new System.Windows.Forms.CheckBox();
             this.button_search_order = new System.Windows.Forms.Button();
             this.textBox_search_order = new System.Windows.Forms.TextBox();
@@ -96,7 +95,6 @@
             // 
             // groupBox_menu_order
             // 
-            this.groupBox_menu_order.Controls.Add(this.button_order);
             this.groupBox_menu_order.Controls.Add(this.checkBox_sent);
             this.groupBox_menu_order.Controls.Add(this.button_search_order);
             this.groupBox_menu_order.Controls.Add(this.textBox_search_order);
@@ -107,23 +105,11 @@
             this.groupBox_menu_order.TabIndex = 15;
             this.groupBox_menu_order.TabStop = false;
             // 
-            // button_order
-            // 
-            this.button_order.Enabled = false;
-            this.button_order.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_order.Location = new System.Drawing.Point(436, 140);
-            this.button_order.Name = "button_order";
-            this.button_order.Size = new System.Drawing.Size(200, 28);
-            this.button_order.TabIndex = 17;
-            this.button_order.Text = "Заказать материалы";
-            this.button_order.UseVisualStyleBackColor = true;
-            this.button_order.Click += new System.EventHandler(this.button_order_Click);
-            // 
             // checkBox_sent
             // 
             this.checkBox_sent.Enabled = false;
             this.checkBox_sent.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox_sent.Location = new System.Drawing.Point(72, 146);
+            this.checkBox_sent.Location = new System.Drawing.Point(259, 113);
             this.checkBox_sent.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox_sent.Name = "checkBox_sent";
             this.checkBox_sent.Size = new System.Drawing.Size(117, 21);
@@ -414,6 +400,5 @@
         private System.Windows.Forms.Button button_admin;
         private System.Windows.Forms.Button button_equipment;
         private System.Windows.Forms.Button button_furniture_materials;
-        private System.Windows.Forms.Button button_order;
     }
 }

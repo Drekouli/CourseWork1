@@ -493,7 +493,7 @@
             // 
             // button_materials_need
             // 
-            this.button_materials_need.BackColor = System.Drawing.SystemColors.Control;
+            this.button_materials_need.BackColor = System.Drawing.Color.Gainsboro;
             this.button_materials_need.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_materials_need.Location = new System.Drawing.Point(1153, 0);
             this.button_materials_need.Name = "button_materials_need";
