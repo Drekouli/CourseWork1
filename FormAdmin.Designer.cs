@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.button_accounts = new System.Windows.Forms.Button();
             this.button_staff = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_furniture = new System.Windows.Forms.Button();
+            this.button_materials = new System.Windows.Forms.Button();
             this.button_equipment = new System.Windows.Forms.Button();
             this.button_furniture_materials = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -55,31 +55,31 @@
             this.button_staff.Name = "button_staff";
             this.button_staff.Size = new System.Drawing.Size(381, 60);
             this.button_staff.TabIndex = 6;
-            this.button_staff.Text = "Работа с кадрами";
+            this.button_staff.Text = "Сотрудники";
             this.button_staff.UseVisualStyleBackColor = true;
             this.button_staff.Click += new System.EventHandler(this.button_staff_Click);
             // 
-            // button2
+            // button_furniture
             // 
-            this.button2.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(12, 144);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(381, 60);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Мастер";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_furniture.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_furniture.Location = new System.Drawing.Point(12, 144);
+            this.button_furniture.Name = "button_furniture";
+            this.button_furniture.Size = new System.Drawing.Size(381, 60);
+            this.button_furniture.TabIndex = 7;
+            this.button_furniture.Text = "Мастер";
+            this.button_furniture.UseVisualStyleBackColor = true;
+            this.button_furniture.Click += new System.EventHandler(this.button_furniture_Click);
             // 
-            // button3
+            // button_materials
             // 
-            this.button3.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(12, 210);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(381, 60);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Кладовщик";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button_materials.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_materials.Location = new System.Drawing.Point(12, 210);
+            this.button_materials.Name = "button_materials";
+            this.button_materials.Size = new System.Drawing.Size(381, 60);
+            this.button_materials.TabIndex = 8;
+            this.button_materials.Text = "Кладовщик";
+            this.button_materials.UseVisualStyleBackColor = true;
+            this.button_materials.Click += new System.EventHandler(this.button_materials_Click);
             // 
             // button_equipment
             // 
@@ -110,8 +110,8 @@
             this.ClientSize = new System.Drawing.Size(406, 432);
             this.Controls.Add(this.button_furniture_materials);
             this.Controls.Add(this.button_equipment);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button_materials);
+            this.Controls.Add(this.button_furniture);
             this.Controls.Add(this.button_staff);
             this.Controls.Add(this.button_accounts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -127,8 +127,8 @@
 
         private System.Windows.Forms.Button button_accounts;
         private System.Windows.Forms.Button button_staff;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_furniture;
+        private System.Windows.Forms.Button button_materials;
         private System.Windows.Forms.Button button_equipment;
         private System.Windows.Forms.Button button_furniture_materials;
     }

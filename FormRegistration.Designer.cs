@@ -189,8 +189,6 @@
             this.dgv_auth.Size = new System.Drawing.Size(540, 451);
             this.dgv_auth.TabIndex = 14;
             this.dgv_auth.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_auth_CellClick);
-            this.dgv_auth.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_auth_CellContentClick);
-            // 
             // button_admin
             // 
             this.button_admin.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

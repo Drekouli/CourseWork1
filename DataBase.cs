@@ -31,18 +31,5 @@ namespace Factory
         }
 
         public SqlConnection GetConnection() { return SqlCon; }
-        /*
-        public Functions()
-        {
-            String ConStr = @"Data Source=Drako;Initial Catalog=Factory;Integrated Security=True"
-            Con = new SqlConnection(ConStr);
-            Cmd = new SqlCommand;
-        }
-        public int SetData(string Query)
-        {
-            int Cnt;
-            if (Con.State == System)
-        }
-        */
     }
 }

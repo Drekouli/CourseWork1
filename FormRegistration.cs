@@ -155,10 +155,5 @@ namespace Factory
             groupBox_data.Enabled = true;
             Delete();
         }
-
-        private void dgv_auth_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

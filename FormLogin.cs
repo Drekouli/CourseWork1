@@ -21,7 +21,7 @@ namespace Factory
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void button_login_Click(object sender, EventArgs e)
+        private void Login()
         {
             var loginUser = textBox_Login.Text;
             var PasswordUser = textBox_Password.Text;
@@ -35,7 +35,7 @@ namespace Factory
 
             adapter.SelectCommand = com;
             adapter.Fill(table);
-            
+
             try
             {
                 if ((table.Rows[0]["authorization_access"].ToString() == "Программист")
@@ -68,7 +68,7 @@ namespace Factory
                     formMaterials.Closed += (s, args) => this.Close();
                     this.Hide();
                     formMaterials.Show();
-                
+
                 }
 
                 else if (table.Rows[0]["authorization_access"].ToString() == "Мастер")
@@ -86,7 +86,10 @@ namespace Factory
                 MessageBox.Show("Такого аккаунта не существует");
             }
             database.closeConnection();
-            
+        }
+        private void button_login_Click(object sender, EventArgs e)
+        {
+            Login();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

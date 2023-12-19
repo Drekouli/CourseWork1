@@ -320,5 +320,10 @@ namespace Factory
             this.Hide();
             formFurnitureMaterials.Show();
         }
+
+        private void groupBox_order_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
